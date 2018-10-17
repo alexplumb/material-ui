@@ -138,7 +138,7 @@ class ButtonBase extends React.Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (typeof prevState.focusVisible === 'undefined') {
+    if (!prevState || typeof prevState.focusVisible === 'undefined') {
       return {
         focusVisible: false,
         lastDisabled: nextProps.disabled,
